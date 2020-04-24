@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import users from './users';
+import usersData from './usersData';
+import userAddressesData from './userAddressesData';
 
 export default combineReducers({
-	users
+	usersData,
+	userAddressesData
 });
