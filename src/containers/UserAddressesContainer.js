@@ -5,13 +5,9 @@ import UserAddresses from '../components/userAddresses/UserAddresses.jsx';
 
 class UserAddressesContainer extends React.Component {
 
-	fetchUserData = (userId) => {
-		this.props.fetchUserAddresses(userId)
-	}
-
 	componentDidMount() {
-		if (this.props.selectedUserId && !this.props.userAddresses[this.props.selectedUserId])
-			this.fetchUserData(this.props.selectedUserId)
+		if (this.props.userAddress.length === 0)
+			this.props.fetchUserAddresses(this.props.selectedUserId)
 	}
 
 	render() {
@@ -19,11 +15,17 @@ class UserAddressesContainer extends React.Component {
 	}
 }
 
-const mapStateToProps = state => ({
-	userAddresses: state.userAddressesData.userAddresses,
-	userAddressesLoading: state.userAddressesData.userAddressesLoading
-})
+const getUserAddress = (addresses, userId) => {
+	if (!addresses) return [];
+	return addresses[userId] || [];
+}
 
+const mapStateToProps = (state, ownProps) => {
+	return {
+		userAddress: getUserAddress(state.userAddressesData.userAddresses, ownProps.selectedUserId),
+		userAddressesLoading: state.userAddressesData.userAddressesLoading
+	}
+}
 const mapDispatchToProps = dispatch => ({
 	fetchUserAddresses: (userId) => dispatch(FetchUserAddresses(userId))
 })

@@ -15,7 +15,7 @@ class UsersList extends React.Component {
 			return <div className="users-list-container">There are no users available</div>
 		}
 
-		let usersList = users.map(user => {
+		return users.map(user => {
 			return <UserRow
 				key={`user_${user.id}`}
 				user={user}
@@ -23,18 +23,6 @@ class UsersList extends React.Component {
 				isSelected={selectedUserId === user.id}
 			/>
 		})
-
-		return (
-			<div className="users">
-				<div className="user-row-header">
-					<div>User ID</div>
-					<div>User Name</div>
-					<div>User Age</div>
-					<div>Gender</div>
-				</div>
-				{usersList}
-			</div>
-		)
 	}
 
 	render() {
@@ -42,7 +30,15 @@ class UsersList extends React.Component {
 		return (
 			<div className="users-list-container">
 				<h2 className="container-header">Users</h2>
-				{this.getUsersContent()}
+				<div className="users">
+					<div className="user-row-header">
+						<div>User ID</div>
+						<div>User Name</div>
+						<div>User Age</div>
+						<div>Gender</div>
+					</div>
+					{this.getUsersContent()}
+				</div>
 			</div>
 		)
 	}

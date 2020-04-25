@@ -6,53 +6,37 @@ class UserAddresses extends React.Component {
 
 	getAddressCards = () => {
 		const {
-			selectedUserId,
-			userAddresses,
+			selectedUser,
+			userAddress,
 			userAddressesLoading
 		} = this.props;
 
 		if (userAddressesLoading)
 			return <div className="address-container">Loading address...</div>
 
-		const selectedUserAddresses = userAddresses[selectedUserId];
-
-		if (selectedUserAddresses && selectedUserAddresses.length === 0)
+		if (userAddress.length === 0)
 			return <div className="address-container">No addresses for this user!</div>
 
-		let userAddressesComponent = [];
 
-		if (selectedUserAddresses)
-			userAddressesComponent = selectedUserAddresses.map(address => {
-				return <AddressCard
-					key={`address_${address.address_id}_user_${selectedUserId}`}
-					address={address}
-				/>
-			})
-
-		return (
-			<div className="address-cards-container">
-				{userAddressesComponent}
-			</div>
-		);
+		return userAddress.map(address => {
+			return <AddressCard
+				key={`address_${address.address_id}_user_${selectedUser.id}`}
+				address={address}
+			/>
+		});
 	}
 
 	render() {
-		const { selectedUser, selectedUserId } = this.props;
-		if (!selectedUserId)
-			return (
-				<div className="address-container">
-					<h2 className="header-text">
-						No user selected
-				</h2>
-				</div>
-			);
+		const { selectedUser } = this.props;
 
 		return (
 			<div className="address-container">
 				<h2 className="header-text">
-					{selectedUser.name}'s Address
+					{selectedUser.name}'s Addresses
 				</h2>
-				{this.getAddressCards()}
+				<div className="address-cards-container">
+					{this.getAddressCards()}
+				</div>
 			</div>
 		);
 	}
