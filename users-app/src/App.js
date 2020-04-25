@@ -22,10 +22,20 @@ const App = () => {
           selectedUserId={selectedUserId}
           setSelectedUser={setUser}
         />
-        <UserAddressesContainer
-          selectedUser={selectedUser}
-          selectedUserId={selectedUserId}
-        />
+        {
+          selectedUserId ?
+            <UserAddressesContainer
+              key={`user_${selectedUserId}`}
+              selectedUser={selectedUser}
+              selectedUserId={selectedUserId}
+            />
+            :
+            <div style={{ width: '100%' }}>
+              <h2 style={{ color: '#666', textAlign: 'center' }}>
+                No user selected
+				      </h2>
+            </div>
+        }
       </div>
     </div>
   );

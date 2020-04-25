@@ -5,7 +5,7 @@ import UsersList from '../components/usersList/UsersList.jsx';
 
 class UserListContainer extends React.Component {
 	componentDidMount() {
-		FetchUsers();
+		this.props.fetchUsers();
 	}
 
 	render() {
@@ -19,7 +19,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-
+	fetchUsers: () => dispatch(FetchUsers())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserListContainer);

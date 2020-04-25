@@ -6,15 +6,12 @@ import UserAddresses from '../components/userAddresses/UserAddresses.jsx';
 class UserAddressesContainer extends React.Component {
 
 	fetchUserData = (userId) => {
-		FetchUserAddresses(userId)
+		this.props.fetchUserAddresses(userId)
 	}
 
-	componentWillReceiveProps(nextProps) {
-		if (
-			this.props.selectedUserId !== nextProps.selectedUserId
-			&& this.props.userAddresses[nextProps.selectedUserId] === undefined
-		)
-			this.fetchUserData(nextProps.selectedUserId)
+	componentDidMount() {
+		if (this.props.selectedUserId && !this.props.userAddresses[this.props.selectedUserId])
+			this.fetchUserData(this.props.selectedUserId)
 	}
 
 	render() {
@@ -28,7 +25,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-
+	fetchUserAddresses: (userId) => dispatch(FetchUserAddresses(userId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserAddressesContainer);
