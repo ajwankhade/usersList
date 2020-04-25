@@ -37,7 +37,7 @@ class UserAddresses extends React.Component {
 	}
 
 	render() {
-		const { selectedUserId } = this.props;
+		const { selectedUser, selectedUserId } = this.props;
 		if (!selectedUserId)
 			return (
 				<div className="address-container">
@@ -50,7 +50,7 @@ class UserAddresses extends React.Component {
 		return (
 			<div className="address-container">
 				<h2 className="header-text">
-					User Id {selectedUserId}'s Address
+					{selectedUser.name}'s Address
 				</h2>
 				{this.getAddressCards()}
 			</div>

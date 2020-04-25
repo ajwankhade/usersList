@@ -9,7 +9,7 @@ class UserRow extends React.Component {
 			<div
 				className={`user-row${this.props.isSelected ? ' selected' : ''}`}
 				key={`user_${user.id}`}
-				onClick={() => this.props.setSelectedUser(user.id)}
+				onClick={() => this.props.setSelectedUser(user.id, user)}
 			>
 				<div>{user.id}</div>
 				<div>{user.name}</div>

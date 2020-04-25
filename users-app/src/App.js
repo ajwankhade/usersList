@@ -7,9 +7,11 @@ import AppHeader from './components/appHeader';
 const App = () => {
 
   const [selectedUserId, setSelectedUserId] = useState(null);
+  const [selectedUser, setSelectedUser] = useState(null);
 
-  const setUser = (userId) => {
+  const setUser = (userId, user = {}) => {
     setSelectedUserId(userId)
+    setSelectedUser(user)
   }
 
   return (
@@ -20,7 +22,10 @@ const App = () => {
           selectedUserId={selectedUserId}
           setSelectedUser={setUser}
         />
-        <UserAddressesContainer selectedUserId={selectedUserId} />
+        <UserAddressesContainer
+          selectedUser={selectedUser}
+          selectedUserId={selectedUserId}
+        />
       </div>
     </div>
   );
