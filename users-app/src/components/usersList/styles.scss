@@ -1,0 +1,41 @@
+@import '../appHeader/appHeader.scss';
+
+.users-list-container {
+	min-width: 50%;
+	height: calc(100vh - #{$headerHeight} - #{$headerBorder});
+	border-right: 2px dashed red;
+	.container-header {
+		color: #666;
+		text-align: center;
+	}
+	.users {
+		margin-top: 20px;
+	}
+	.user-row , .user-row-header{
+		width: 100%;
+		height: 40px;
+		@include display-flex-center-all;
+		div {
+			@include display-flex-center-all;
+			width: 100%;
+		}
+	}
+	.user-row {
+		cursor: pointer;
+		&:nth-child(odd) {
+			background-color: #ccc;
+		}
+		div {
+			@include display-flex-center-all;
+			width: 100%;
+		}
+		&:hover {
+			zoom: 1.1;
+			font-weight: bold;
+		}
+	}
+	.user-row.selected {
+		color: coral;
+		font-weight: bold;
+	}
+}

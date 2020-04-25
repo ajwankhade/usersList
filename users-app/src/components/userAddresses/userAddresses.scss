@@ -1,0 +1,26 @@
+@import '../appHeader/appHeader.scss';
+
+.address-container {
+	width: 100%;
+	.header-text {
+		color: #666;
+		text-align: center;
+	}
+
+	.address-cards-container {
+		@include display-flex-center-all;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+	}
+
+	.address-card {
+		min-width: 200px;
+		max-width: 200px;
+		padding: 20px;
+		box-sizing: border-box;
+		border: 1px solid grey;
+		border-radius: 4px;
+		margin-left: 30px;
+		margin-top: 20px;
+	}
+}

@@ -1,0 +1,19 @@
+@import 'src/styles/mixins.scss';
+
+$headerHeight: 100px;
+$headerBorder: 1px;
+
+.app-header-container {
+	width: 100%;
+	height: $headerHeight;
+	border-bottom: $headerBorder solid blue;
+	@include display-flex-center-all;
+	position: fixed;
+	top: 0;
+	left: 0;
+	.header-text {
+		color: #999;
+		@include display-flex-center-all;
+		margin: unset;
+	}
+}
