@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ajwankhade/usersList/static/css/main.ca139fea.chunk.css",
+    "main.js": "/ajwankhade/usersList/static/js/main.a182058e.chunk.js",
+    "main.js.map": "/ajwankhade/usersList/static/js/main.a182058e.chunk.js.map",
+    "runtime-main.js": "/ajwankhade/usersList/static/js/runtime-main.343dedb0.js",
+    "runtime-main.js.map": "/ajwankhade/usersList/static/js/runtime-main.343dedb0.js.map",
+    "static/js/2.b6269fba.chunk.js": "/ajwankhade/usersList/static/js/2.b6269fba.chunk.js",
+    "static/js/2.b6269fba.chunk.js.map": "/ajwankhade/usersList/static/js/2.b6269fba.chunk.js.map",
+    "index.html": "/ajwankhade/usersList/index.html",
+    "precache-manifest.a6b59ff42cfc1d00717007e9e7e330be.js": "/ajwankhade/usersList/precache-manifest.a6b59ff42cfc1d00717007e9e7e330be.js",
+    "service-worker.js": "/ajwankhade/usersList/service-worker.js",
+    "static/css/main.ca139fea.chunk.css.map": "/ajwankhade/usersList/static/css/main.ca139fea.chunk.css.map",
+    "static/js/2.b6269fba.chunk.js.LICENSE.txt": "/ajwankhade/usersList/static/js/2.b6269fba.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.343dedb0.js",
+    "static/js/2.b6269fba.chunk.js",
+    "static/css/main.ca139fea.chunk.css",
+    "static/js/main.a182058e.chunk.js"
+  ]
+}
