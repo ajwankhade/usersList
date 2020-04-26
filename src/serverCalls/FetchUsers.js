@@ -8,7 +8,7 @@ export const FetchUsers = () => dispatch => {
 	dispatch(setUsersDataLoading(true));
 	return axios
 		.get(
-			"http://demo5472662.mockable.io/users"
+			"https://demo5472662.mockable.io/users"
 		)
 		.then(({ data }) => {
 			dispatch(setUsers(data));

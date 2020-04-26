@@ -8,7 +8,7 @@ export const FetchUserAddresses = (userId) => dispatch => {
 	dispatch(setUserAddressesLoading(true));
 	axios
 		.get(
-			`http://demo5472662.mockable.io/user${userId}_addresses`
+			`https://demo5472662.mockable.io/user${userId}_addresses`
 		)
 		.then(({ data }) => {
 			dispatch(setUserAddresses(userId, data));
