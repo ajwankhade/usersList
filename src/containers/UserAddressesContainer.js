@@ -3,11 +3,11 @@ import { FetchUserAddresses } from '../serverCalls/FetchUserAddresses.js';
 import { connect } from 'react-redux';
 import UserAddresses from '../components/userAddresses/UserAddresses.jsx';
 
-class UserAddressesContainer extends React.Component {
+export class UserAddressesContainer extends React.Component {
 
 	componentDidMount() {
 		if (this.props.userAddress.length === 0)
-			this.props.fetchUserAddresses(this.props.selectedUserId)
+			this.props.fetchUserAddresses(this.props.selectedUser.id)
 	}
 
 	render() {
@@ -15,14 +15,14 @@ class UserAddressesContainer extends React.Component {
 	}
 }
 
-const getUserAddress = (addresses, userId) => {
+export const getUserAddress = (addresses, userId) => {
 	if (!addresses) return [];
 	return addresses[userId] || [];
 }
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-		userAddress: getUserAddress(state.userAddressesData.userAddresses, ownProps.selectedUserId),
+		userAddress: getUserAddress(state.userAddressesData.userAddresses, ownProps.selectedUser.id),
 		userAddressesLoading: state.userAddressesData.userAddressesLoading
 	}
 }

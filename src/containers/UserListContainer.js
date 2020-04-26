@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { FetchUsers } from '../serverCalls/FetchUsers.js';
 import UsersList from '../components/usersList/UsersList.jsx';
 
-class UserListContainer extends React.Component {
+export class UserListContainer extends React.Component {
 	componentDidMount() {
 		this.props.fetchUsers();
 	}

@@ -6,11 +6,9 @@ import AppHeader from './components/appHeader';
 
 const App = () => {
 
-  const [selectedUserId, setSelectedUserId] = useState(null);
   const [selectedUser, setSelectedUser] = useState(null);
 
   const setUser = (userId, user = {}) => {
-    setSelectedUserId(userId)
     setSelectedUser(user)
   }
 
@@ -19,15 +17,14 @@ const App = () => {
       <AppHeader />
       <div className="content">
         <UserListContainer
-          selectedUserId={selectedUserId}
+          selectedUser={selectedUser}
           setSelectedUser={setUser}
         />
         {
-          selectedUserId ?
+          selectedUser ?
             <UserAddressesContainer
-              key={`user_${selectedUserId}`}
+              key={`user_${selectedUser.id}`}
               selectedUser={selectedUser}
-              selectedUserId={selectedUserId}
             />
             :
             <div style={{ width: '100%' }}>

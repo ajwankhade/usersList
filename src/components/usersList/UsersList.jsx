@@ -5,14 +5,14 @@ import UserRow from './UserRow';
 class UsersList extends React.Component {
 
 	getUsersContent = () => {
-		const { users, selectedUserId, userDataLoading } = this.props;
+		const { users, selectedUser, userDataLoading } = this.props;
 
 		if (userDataLoading) {
-			return <div className="users-list-container">Loading users...</div>
+			return <div className="users-list-container" name="loading">Loading users...</div>
 		}
 
 		if (users.length === 0) {
-			return <div className="users-list-container">There are no users available</div>
+			return <div className="users-list-container" name="noUsers">There are no users available</div>
 		}
 
 		return users.map(user => {
@@ -20,7 +20,7 @@ class UsersList extends React.Component {
 				key={`user_${user.id}`}
 				user={user}
 				setSelectedUser={this.props.setSelectedUser}
-				isSelected={selectedUserId === user.id}
+				isSelected={selectedUser && selectedUser.id === user.id}
 			/>
 		})
 	}

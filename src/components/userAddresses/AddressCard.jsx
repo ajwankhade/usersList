@@ -1,23 +1,15 @@
 import React from 'react';
 import './userAddresses.scss';
 
-class AddressCard extends React.Component {
-
-	getAddressFormatted = () => {
-		const { address } = this.props;
-		return `${address.house_no},\n${address.street_name},\n${address.city_name},\n${address.country}`
-	}
-
-	render() {
-
-		return (
-			<div
-				className="address-card"
-				dangerouslySetInnerHTML={{ __html: this.getAddressFormatted() }}
-			>
-			</div>
-		)
-	}
+const AddressCard = ({ address }) => {
+	return (
+		<div className="address-card">
+			<p>{address.house_no}</p>
+			<p>{address.street_name}</p>
+			<p>{address.city_name}</p>
+			<p>{address.country}</p>
+		</div>
+	)
 }
 
-export default AddressCard;
+export default AddressCard

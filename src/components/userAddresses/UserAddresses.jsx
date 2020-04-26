@@ -12,13 +12,13 @@ class UserAddresses extends React.Component {
 		} = this.props;
 
 		if (userAddressesLoading)
-			return <div className="address-container">Loading address...</div>
+			return <div className="address-container" name="loading">Loading address...</div>
 
 		if (userAddress.length === 0)
-			return <div className="address-container">No addresses for this user!</div>
+			return <div className="address-container" name="noContent">No addresses for this user!</div>
 
 
-		return userAddress.map(address => {
+		return userAddress.map((address, index) => {
 			return <AddressCard
 				key={`address_${address.address_id}_user_${selectedUser.id}`}
 				address={address}
@@ -28,6 +28,7 @@ class UserAddresses extends React.Component {
 
 	render() {
 		const { selectedUser } = this.props;
+
 
 		return (
 			<div className="address-container">
