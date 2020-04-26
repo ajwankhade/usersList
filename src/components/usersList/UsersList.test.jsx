@@ -2,14 +2,9 @@ import React from 'react';
 import UsersList from './UsersList';
 import UserRow from './UserRow';
 import { shallow } from 'enzyme'
+import { mockUser } from '../../utils/testingUtils'
 
 describe("Users List Component", () => {
-	const mockUser = (user = {}) => ({
-		name: 'xyz',
-		id: 1,
-		gender: 'Male',
-		age: 25
-	})
 	const mockProps = (props = {}) => ({
 		users: [mockUser()],
 		selectedUser: mockUser(),

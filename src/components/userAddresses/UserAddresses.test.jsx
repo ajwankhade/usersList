@@ -2,17 +2,9 @@ import React from 'react';
 import UserAddresses from './UserAddresses';
 import AddressCard from './AddressCard';
 import { shallow, mount } from 'enzyme';
-
+import { mockAddress } from '../../utils/testingUtils'
 
 describe('UserAdress component', () => {
-	const mockAddress = (address = {}) => ({
-		address: {
-			house_no: 1,
-			street_name: 'xyz',
-			city_name: 'dogjao',
-			country: 'India'
-		}
-	})
 	const mockProps = (props = {}) => ({
 		selectedUser: {
 			name: 'test',

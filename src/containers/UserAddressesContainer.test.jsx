@@ -1,28 +1,15 @@
 import React from 'react';
 import { getUserAddress, UserAddressesContainer } from './UserAddressesContainer'
 import { shallow } from 'enzyme';
+import { mockUser, mockAddress } from '../utils/testingUtils'
 
 describe('UserListContainer ', () => {
-
-	const mockUser = (user) => ({
-		id: 1,
-		name: 'abc',
-		...user
-	})
 
 	const mockProps = (props = {}) => ({
 		userAddress: [],
 		fetchUserAddresses: jest.fn(),
 		...props
 	});
-
-	const mockAddress = (address = {}) => ({
-		house_no: 123,
-		street_name: 'xyz ',
-		city_name: 'abb',
-		country: 'kdjgkla',
-		...address
-	})
 
 	it("should fetch users address", () => {
 		const props = mockProps({ selectedUser: mockUser() });
